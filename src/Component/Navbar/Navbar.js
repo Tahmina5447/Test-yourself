@@ -11,8 +11,7 @@ const Navbar = () => {
             <div className='absolute right-8 pt-1'>
                 <ul className='flex font-bold text-white'>
                     <li className='mr-4'><Link to='/'>Home</Link></li>
-                    <li className='mr-4'><Link to='blog'>Quiz</Link></li>
-                    <li className='mr-4'><Link to='quiz'>Statistics</Link></li>
+                    <li className='mr-4'><Link to='statistics'>Statistics</Link></li>
                     <li className='mr-4'><Link to='blog'>Blog</Link></li>
                 </ul>
             </div>
