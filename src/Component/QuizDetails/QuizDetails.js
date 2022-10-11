@@ -4,11 +4,11 @@ import AllQuestions from '../AllQuestions/AllQuestions';
 
 const QuizDetails = () => {
     const singleData=useLoaderData();
-    const questions=singleData.data.questions;
+    const allquestions=singleData.data.questions;
     return (
         <div>
             {
-                questions.map(question=><AllQuestions question={question}></AllQuestions>)
+                allquestions.map(questions=><AllQuestions key={questions.id} questions={questions}></AllQuestions>)
             }
         </div>
     );

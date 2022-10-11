@@ -8,11 +8,14 @@ import Statistics from './Component/Statistics/Statistics';
 import Blog from './Component/Blog/Blog';
 import { quizData } from './Loader/Loader';
 import QuizDetails from './Component/QuizDetails/QuizDetails';
+import Error from './Component/Error/Error';
+
 
 function App() {
   const router=createBrowserRouter([
     {
       path:'/',
+      errorElement:<Error></Error>,
       loader:quizData,
       element:<Root></Root>,
       children:[
@@ -39,6 +42,9 @@ function App() {
           },
           element:<QuizDetails></QuizDetails>
         }
+        
+        
+
       ]
     }
   ]);
