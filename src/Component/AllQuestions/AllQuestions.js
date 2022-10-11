@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { UilEye } from '@iconscout/react-unicons'
-import { Link } from 'react-router-dom';
+
 
 const AllQuestions = ({questions}) => {
     const [ans,setAns]=useState('');
@@ -10,6 +10,7 @@ const AllQuestions = ({questions}) => {
     const correctAns=(cans)=>{
         setAns(cans)
     }
+
     return (
        <div className='w-3/5 mx-auto shadow-xl pb-6 my-10'>
         
@@ -17,35 +18,16 @@ const AllQuestions = ({questions}) => {
                 <h1>{question}</h1>
             </div>
             <div className='grid grid-cols-2 gap-6 px-8 '>
-                <div className='flex bg-green-700 border py-1 pl-4 rounded-lg border-black'>
+                {
+                    options.map(item=><div className='flex bg-green-700 border py-1 pl-4 rounded-lg border-black'>
                     <div className='mr-2'>
-                        <input type="checkbox" checked className="checkbox checkbox-xs mt-1 text-center" /> 
+                        <input type="radio" name='radiobtn'  className="radio radio-xs mt-1 text-center bg-white" /> 
                     </div>
-                    <div className=' text-white'>{options[0]}</div>
+                    <div className=' text-white'>{item}</div>
                     
-                </div>
-                <div className='flex bg-green-700 border py-1 pl-4 rounded-lg border-black'>
-                    <div className='mr-2'>
-                        <input type="checkbox" checked className="checkbox checkbox-xs mt-1 text-center" /> 
-                    </div>
-                    <div className=' text-white'>{options[1]}</div>
-                    
-                </div>
-                <div className='flex bg-green-700 border py-1 pl-4 rounded-lg border-black'>
-                    <div className='mr-2'>
-                        <input type="checkbox" checked className="checkbox checkbox-xs mt-1 text-center" /> 
-                    </div>
-                    <div className=' text-white'>{options[2]}</div>
-                    
-                </div>
-                <div className='flex bg-green-700 border py-1 pl-4 rounded-lg border-black'>
-                    <div className='mr-2'>
-                        <input type="checkbox" checked className="checkbox checkbox-xs mt-1 text-center" /> 
-                    </div>
-                    <div className=' text-white'>{options[3]}</div>
-                    
-                </div>
-               
+                </div>)
+                }
+                
             </div>
             <div className='flex font-bold mt-4 w-3/5 mx-auto justify-center'>
                 <div>
