@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { UilEye } from '@iconscout/react-unicons'
 
 
@@ -11,7 +12,15 @@ const AllQuestions = ({questions}) => {
         setAns(cans)
     }
 
-
+const test=(items)=>{
+    if(items===correctAnswer){
+        toast.success("Right Answer!",{position:"top-center",
+        autoClose:1000});
+    }else{
+        toast.error("Wrong Answer!",{position:"top-center",
+        autoClose:1000});
+    }
+}
 
     return (
        <div className='lg:w-3/5 md:w-4/5 sm:w-2/5 mx-auto shadow-xl pb-6 my-10'>
@@ -23,7 +32,7 @@ const AllQuestions = ({questions}) => {
                 {
                     options.map(item=><div  className='flex bg-green-700 border pl-2  rounded-lg border-black'>
                     <div className='mr-2'>
-                        <input  type="radio" name='radiobtn'  className="radio radio-xs mt-1 text-center bg-white" /> 
+                        <input onClick={()=>test(item)} type="radio" name='radiobtn'  className="radio radio-xs mt-1 text-center bg-white" /> 
                     </div>
                     <div className=' text-white'><p> {item} </p></div>
                     
@@ -43,7 +52,7 @@ const AllQuestions = ({questions}) => {
             <div className='text-center text-white bg-green-900 w-3/6 mx-auto mt-4 rounded-lg border-black border py-1'>
                 <h3>{ans}</h3>
             </div>
-
+            <ToastContainer />
        </div>
     );
 };

@@ -15,7 +15,7 @@ const quizDatas=useContext(QuizContext);
                 <p className=' mt-3 text-green-800'>We want to improve ourselves, Our learning content is challenging. If we want to be a success man we must do hard work. Be a light to yourself and do not depend on anyone for the understanding of life.</p>
             </div>
         
-            <div  className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 sm:gap-3'>
+            <div  className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6'>
                 {
                     quizDatas.map(quiz=><Allquizes quiz={quiz}></Allquizes>)
                 }
