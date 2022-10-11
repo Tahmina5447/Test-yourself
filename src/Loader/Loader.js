@@ -5,3 +5,8 @@ export const quizData=async()=>{
 
     return allQuizes;
 }
+// export const quizDetails=async()=>{
+//     const detailsData=await fetch('')
+//     const details=await detailsData.json()
+//     return details;
+// }

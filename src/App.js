@@ -7,6 +7,7 @@ import Quiz from './Component/Quiz/Quiz';
 import Statistics from './Component/Statistics/Statistics';
 import Blog from './Component/Blog/Blog';
 import { quizData } from './Loader/Loader';
+import QuizDetails from './Component/QuizDetails/QuizDetails';
 
 function App() {
   const router=createBrowserRouter([
@@ -30,6 +31,13 @@ function App() {
         {
           path:'blog',
           element:<Blog></Blog>
+        },
+        {
+          path:'/allquize/:id',
+          loader:async({params})=>{
+           return fetch (`https://openapi.programming-hero.com/api/quiz/${params.id}`)
+          },
+          element:<QuizDetails></QuizDetails>
         }
       ]
     }

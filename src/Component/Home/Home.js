@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
 import Allquizes from '../ALLquizes/Allquizes';
 import { QuizContext } from '../../Root/Root';
 
