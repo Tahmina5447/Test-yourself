@@ -5,12 +5,14 @@ import { PureComponent } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 
+
 const Statistics = () => {
     const quizDatas=useContext(QuizContext);
     console.log(quizDatas)
     
+    
     return (
-        <div className='mx-auto mt-10' style={{ width: '50%', height: 300 }}>
+        <div  className='mx-auto mt-10 ' style={{ width: '80%', height: 300 }}>
         <ResponsiveContainer>
           <AreaChart
             data={quizDatas}

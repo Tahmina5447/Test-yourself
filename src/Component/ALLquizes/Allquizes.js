@@ -17,7 +17,7 @@ const Allquizes = ({quiz}) => {
                         <div className="card-actions">
                         <Link to={`../allquize/${id}`} className="btn bg-white text-green-900 font-bold" >Start Now</Link>
                         </div>
-                        {/*  */}
+                        
                     </div>
                 </div>
         </div>
